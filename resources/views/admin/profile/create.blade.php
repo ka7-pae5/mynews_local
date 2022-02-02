@@ -36,7 +36,7 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="introduction">自己紹介</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="1">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="3">{{ old('body') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
