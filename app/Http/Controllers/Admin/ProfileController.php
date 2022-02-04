@@ -25,6 +25,12 @@ class ProfileController extends Controller
     return redirect('admin/profile/create');
     }
 
+    public function index(Request $request)
+    {
+            $posts = Profile::all();
+        return view('admin.profile.index', ['posts' => $posts]);
+    }
+
     public function edit()
     {
     return view('admin.profile.edit');
@@ -34,4 +40,6 @@ class ProfileController extends Controller
     {
     return redirect('admin/profile/edit');
     }
+
+
 }
