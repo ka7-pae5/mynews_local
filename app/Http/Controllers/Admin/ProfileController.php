@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profile;
+use Carbon\Carbon;
+use App\ProfHistory;
 
 class ProfileController extends Controller
 {
@@ -46,14 +48,19 @@ class ProfileController extends Controller
       $profile = Profile::find($request->id);
       $profile_form = $request->all();
       $profile->fill($profile_form)->save();
-    return redirect('admin/profile/edit');
+
+       $history = new ProfHistory();
+       $history->profile_id = $profile->id;
+       $history->edited_at = Carbon::now();
+       $history->save();
+
+    return redirect('admin/profile/');
     }
 
     public function delete(Request $request)
   {
       $profile = Profile::find($request->id);
-      // 削除する
       $profile->delete();
       return redirect('admin/profile/');
-  } 
+  }
 }

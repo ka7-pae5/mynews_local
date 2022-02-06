@@ -6,7 +6,7 @@
         <div class="row">
             <h2>プロフィール一覧</h2>
         </div>
-        <div class="row">
+        <div class="row py-2">
             <div class="col-md-4">
                 <a href="{{ action('Admin\ProfileController@add') }}" role="button" class="btn btn-primary">新規作成</a>
             </div>
@@ -18,11 +18,13 @@
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">氏名</th>
-                                <th width="20%">性別</th>
+                                <th width="10%">氏名</th>
+                                <th width="10%">性別</th>
                                 <th width="20%">趣味</th>
-                                <th width="50%">自己紹介</th>
+                                <th width="40%">自己紹介</th>
+                                <th width="10%">操作</th>
                             </tr>
+
                         </thead>
                         <tbody>
                             @foreach($posts as $profile)
@@ -36,8 +38,6 @@
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
                                         </div>
-                                    </td>
-                                    <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@delete', ['id' => $profile->id]) }}">削除</a>
                                         </div>
