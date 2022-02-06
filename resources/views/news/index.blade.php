@@ -9,6 +9,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="caption mx-auto">
+                                <p>happy news!</p>
                                 <div class="image">
                                     @if ($headline->image_path)
                                         <img src="{{ asset('storage/image/' . $headline->image_path) }}">
@@ -19,7 +20,6 @@
                                 </div>
                             </div>
                         </div>
-                        <p>happy news!</p>
                         <div class="col-md-6">
                             <p class="body mx-auto">{{ \Str::limit($headline->body, 650) }}</p>
                         </div>
