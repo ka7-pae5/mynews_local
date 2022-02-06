@@ -19,6 +19,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p>happy news!</p>
                         <div class="col-md-6">
                             <p class="body mx-auto">{{ \Str::limit($headline->body, 650) }}</p>
                         </div>
